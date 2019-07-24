@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>h5爱心鱼游戏</title>
+	<title>俄罗斯方块</title>
     <meta charset= "utf-8"/>
-    <style>body {
+    <style>
+    body {
       background-color: #cfd8dc;
     }
     
@@ -80,7 +81,11 @@
     </style>
 </head>
 <body>
-	<div id="tetris"></div>
+  <div id="tetris"></div>
+  <button id="change">巴啦啦小魔仙变身</button>
+  <button id="down">下</button>
+  <button id="left">左</button>
+  <button id="right">右</button>
 </body>
 <script type="text/javascript">
 	/**
@@ -438,9 +443,29 @@ function Tetris(options) {
     fallSpeed = 1000;
   }
 
+  function change () {
+    console.log('upup')
+    coordsToMove = [0, -1];
+  }
+  function left () {
+    console.log('upup')
+    coordsToMove = [-1, 0];
+  }
+  function right () {
+    console.log('upup')
+    coordsToMove = [1, 0];
+  }
+  function down () {
+    console.log('upup')
+    coordsToMove = [0, 1];
+  }
   generateComponent();
   drawField();
   document.body.addEventListener('keydown', controlTetramino, false);
+  document.getElementById('change').addEventListener('click', change, false);
+  document.getElementById('left').addEventListener('click', left, false);
+  document.getElementById('right').addEventListener('click', right, false);
+  document.getElementById('down').addEventListener('click', down, false);
   runTetris();
 }
 
