@@ -78,14 +78,21 @@
       -webkit-box-shadow: -5px 5px 15px #607d8b;
       box-shadow: -5px 5px 15px #607d8b;
     }
+    .change, .direction {
+      margin-left: 120px;
+    }
     </style>
 </head>
 <body>
   <div id="tetris"></div>
-  <button id="change">巴啦啦小魔仙变身</button>
-  <button id="down">下</button>
-  <button id="left">左</button>
-  <button id="right">右</button>
+  <div class="change">
+    <button id="change">巴啦啦小魔仙变身</button>
+  </div>
+  <div class="direction">
+    <button id="down">下</button>
+    <button id="left">左</button>
+    <button id="right">右</button>
+  </div>
 </body>
 <script type="text/javascript">
 	/**
@@ -471,8 +478,8 @@ function Tetris(options) {
 
 var tetris = new Tetris({
   elem: document.getElementById('tetris'),
-  width: 10,
-  height: 20
+  width: 30,
+  height: 60
 });
 </script>
 </html>
